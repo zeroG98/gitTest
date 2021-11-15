@@ -28,3 +28,87 @@ git init하면 기본적으로 master이라는 이름으로 Branch가 만들어�
 안정화가 되면 master branch와 합쳐서 배포를 할 수 있다.
 master branch는 최대한 보수적으로 관리를 한다.
 
+D:\gitTest1>git branch add-style
+
+D:\gitTest1>git branch
+  add-style
+* master
+
+D:\gitTest1>git checkout add-style
+Switched to branch 'add-style'
+
+D:\gitTest1>git branch
+* add-style
+  master
+
+D:\gitTest1>git status
+On branch add-style
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in 
+working directory)
+        modified:   index.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        main.css
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+D:\gitTest1>git add .
+
+D:\gitTest1>git status
+On branch add-style
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)  
+        modified:   index.html
+        new file:   main.css
+
+
+D:\gitTest1>git commit -m "main.css 추가"
+[add-style 4968013] main.css 추가
+ 2 files changed, 5 insertions(+), 1 deletion(-)     
+ create mode 100644 main.css
+
+D:\gitTest1>git log
+commit 4968013e45c7d5d45e53b5056d712957ade61cda (HEAD -> add-style)
+Author: zeroG98 <sin9801@naver.com>
+Date:   Mon Nov 15 15:58:36 2021 +0900
+
+    main.css 추가
+
+commit d033cedfa79e22a9f28c8886b71f4ffd50c67280 (master)
+Author: zeroG98 <sin9801@naver.com>
+Date:   Mon Nov 15 15:53:20 2021 +0900
+
+    index.html 추가
+
+commit 00a55a36d7fe12c9a5774551588405f12259da8d      
+Author: zeroG98 <sin9801@naver.com>
+Date:   Mon Nov 15 15:49:02 2021 +0900
+
+    version 3
+
+commit fd82e712043eba7d1f59fe5aac181c9ba1ec0d27      
+Author: zeroG98 <sin9801@naver.com>
+Date:   Mon Nov 15 15:41:36 2021 +0900
+
+    version 2
+
+commit dff60a99ee2ec081ce1ec4ed373679bd2155dcb2      
+Author: zeroG98 <sin9801@naver.com>
+Date:   Mon Nov 15 15:36:47 2021 +0900
+
+    version 1
+
+D:\gitTest1>git checkout master
+Switched to branch 'master'
+
+D:\gitTest1>git checkout add-style
+Switched to branch 'add-style'
+
+D:\gitTest1>git checkout master    
+Switched to branch 'master'
+
+D:\gitTest1>git checkout add-style 
+Switched to branch 'add-style'
