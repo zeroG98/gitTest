@@ -13,3 +13,18 @@ git commit -m "버전과 관련된 메시지(설명)"
 
 ** 버전 확인**
 git log
+
+** Branch 개념**
+프로젝트를 분리시킬 때 사용되는 개념
+
+-- master Branch
+git init하면 기본적으로 master이라는 이름으로 Branch가 만들어진다.
+"핵심 브랜치"라고도 한다.
+
+프로젝트 관리할 때 중요 내용이 master branch에서 관리되고,
+실제로 프로젝트를 배포할 때도 master branch를 이용한다.
+
+따라서, 새로운 기능을 만든다면 새로운 branch를 만들어서 테스트해보고
+안정화가 되면 master branch와 합쳐서 배포를 할 수 있다.
+master branch는 최대한 보수적으로 관리를 한다.
+
